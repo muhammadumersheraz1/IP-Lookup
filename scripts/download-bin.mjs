@@ -5,6 +5,7 @@ import { pipeline } from "node:stream/promises";
 import { createWriteStream } from "node:fs";
 import { fileURLToPath } from "node:url";
 import unzipBin from "../lib/unzip-bin.mjs";
+import { IP2LOCATION_TOKEN } from "../lib/token.js";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = path.join(ROOT, "data");
@@ -16,22 +17,7 @@ if (fs.existsSync(BIN_PATH) && fs.statSync(BIN_PATH).size > 1_000_000) {
   process.exit(0);
 }
 
-const token = process.env.IP2LOCATION_TOKEN || process.argv[2] || "";
-if (!token) {
-  console.error(`
-Missing IP2LOCATION_TOKEN.
-
-Vercel:
-  Project → Settings → Environment Variables
-  Name: IP2LOCATION_TOKEN
-  Value: your lite.ip2location.com download token
-  Enable it for Production, Preview, and Development.
-
-Local:
-  npm run download-db -- YOUR_TOKEN
-`);
-  process.exit(1);
-}
+const token = process.env.IP2LOCATION_TOKEN || process.argv[2] || IP2LOCATION_TOKEN;
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 const url = `https://www.ip2location.com/download?token=${encodeURIComponent(token)}&file=DB3LITEBIN`;
