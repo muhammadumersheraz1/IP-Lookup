@@ -170,6 +170,17 @@ button:disabled {
   overflow-wrap: anywhere;
 }
 
+.credit {
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto 48px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.credit a {
+  color: var(--accent);
+}
+
 @media (max-width: 640px) {
   .row {
     flex-direction: column;

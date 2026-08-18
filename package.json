@@ -1,0 +1,16 @@
+{
+  "name": "ip-lookup",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node local-server.mjs",
+    "download-db": "node scripts/download-bin.mjs",
+    "build": "node scripts/download-bin.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ip2location-nodejs": "^9.7.0"
+  }
+}

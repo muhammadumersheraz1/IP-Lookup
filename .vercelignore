@@ -1,0 +1,8 @@
+server/
+server/data/
+*.sqlite
+*.CSV
+*.csv
+!public
+.env
+.DS_Store

@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+.vercel
+.env
+server/data/*.CSV
+server/data/*.BIN
+server/data/*.csv
+server/data/*.zip
+server/data/*.sqlite
+server/data/*.sqlite-journal
+server/data/visits.jsonl
+data/*.BIN
+data/*.ZIP
+data/*.zip
+data/*.CSV
+__pycache__/
+*.pyc

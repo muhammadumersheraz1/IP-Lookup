@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IP City Scraper</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>IP City Lookup</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="shell">
       <header class="hero">
-        <p class="eyebrow">Frontend scrape</p>
+        <p class="eyebrow">IP2Location LITE</p>
         <h1>IP City Lookup</h1>
         <p class="lede">
-          Enter an IP address. The page fetches
-          <code>whatismyipaddress.com/ip/&lt;ip&gt;</code>
-          in the browser and scrapes the city from the HTML/text.
+          When this page opens, the browser asks your Vercel API for the visitor
+          city. The server looks it up in IP2Location LITE. No Jina.
         </p>
       </header>
 
@@ -27,17 +26,11 @@
             type="text"
             inputmode="decimal"
             spellcheck="false"
-            placeholder="119.73.7.124"
-            value="119.73.7.124"
+            placeholder="Your IP is detected automatically"
           />
           <button type="submit" id="lookup-btn">Get city</button>
         </div>
-        <p class="hint">
-          Target:
-          <a id="target-link" href="https://whatismyipaddress.com/ip/119.73.7.124" target="_blank" rel="noopener">
-            https://whatismyipaddress.com/ip/119.73.7.124
-          </a>
-        </p>
+        <p class="hint">Your current IP is filled automatically from the backend.</p>
       </form>
 
       <section id="status" class="status" hidden></section>
@@ -46,13 +39,15 @@
         <p class="result-label">City</p>
         <p id="city-value" class="city">—</p>
         <dl id="meta" class="meta"></dl>
-        <p class="source">
-          Scraped from
-          <a id="source-link" href="#" target="_blank" rel="noopener"></a>
-        </p>
+        <p id="source-note" class="source"></p>
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <p class="credit">
+      This site uses the IP2Location LITE database for IP geolocation.
+      <a href="https://lite.ip2location.com/" target="_blank" rel="noopener">lite.ip2location.com</a>
+    </p>
+
+    <script src="/app.js"></script>
   </body>
 </html>

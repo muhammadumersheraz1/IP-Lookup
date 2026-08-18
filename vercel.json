@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "api/geo.js": {
+      "includeFiles": "data/**",
+      "maxDuration": 15
+    },
+    "api/visits.js": {
+      "maxDuration": 10
+    }
+  }
+}
