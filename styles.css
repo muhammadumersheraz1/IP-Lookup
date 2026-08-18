@@ -1,0 +1,177 @@
+:root {
+  --bg: #10141c;
+  --panel: #181e29;
+  --line: #2a3344;
+  --text: #e8edf5;
+  --muted: #9aa6b8;
+  --accent: #7cd4c4;
+  --danger: #f07178;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  background:
+    radial-gradient(circle at top left, #1c2738, transparent 32%),
+    var(--bg);
+  color: var(--text);
+}
+
+.shell {
+  width: min(720px, calc(100% - 32px));
+  margin: 56px auto;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  letter-spacing: -0.04em;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lede,
+.hint,
+.source,
+.status {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+code,
+.hint a,
+.source a {
+  color: var(--accent);
+}
+
+.panel,
+.result,
+.status {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  padding: 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #10151e;
+  color: var(--text);
+}
+
+button {
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #10211d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.hint {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  margin-top: 16px;
+  padding: 14px 18px;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.result {
+  margin-top: 16px;
+  padding: 28px;
+}
+
+.result-label {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+.city {
+  margin: 8px 0 18px;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  margin: 0;
+}
+
+.meta dt {
+  color: var(--muted);
+}
+
+.meta dd {
+  margin: 0;
+}
+
+.source {
+  margin: 18px 0 0;
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+  }
+}

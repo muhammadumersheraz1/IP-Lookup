@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP City Scraper</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Frontend scrape</p>
+        <h1>IP City Lookup</h1>
+        <p class="lede">
+          Enter an IP address. The page fetches
+          <code>whatismyipaddress.com/ip/&lt;ip&gt;</code>
+          in the browser and scrapes the city from the HTML/text.
+        </p>
+      </header>
+
+      <form id="lookup-form" class="panel" autocomplete="off">
+        <label for="ip-input">IP address</label>
+        <div class="row">
+          <input
+            id="ip-input"
+            name="ip"
+            type="text"
+            inputmode="decimal"
+            spellcheck="false"
+            placeholder="119.73.7.124"
+            value="119.73.7.124"
+          />
+          <button type="submit" id="lookup-btn">Get city</button>
+        </div>
+        <p class="hint">
+          Target:
+          <a id="target-link" href="https://whatismyipaddress.com/ip/119.73.7.124" target="_blank" rel="noopener">
+            https://whatismyipaddress.com/ip/119.73.7.124
+          </a>
+        </p>
+      </form>
+
+      <section id="status" class="status" hidden></section>
+
+      <section id="result" class="result" hidden>
+        <p class="result-label">City</p>
+        <p id="city-value" class="city">—</p>
+        <dl id="meta" class="meta"></dl>
+        <p class="source">
+          Scraped from
+          <a id="source-link" href="#" target="_blank" rel="noopener"></a>
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
