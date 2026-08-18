@@ -3,6 +3,12 @@ import os from "node:os";
 import path from "node:path";
 import { clientIp, isValidIPv4, lookup } from "../lib/geo.js";
 
+export const config = {
+  maxDuration: 15,
+  memory: 1024,
+  includeFiles: ["data/IP2LOCATION-LITE-DB3.BIN"],
+};
+
 const VISITS_PATH = path.join(os.tmpdir(), "ip-lookup-visits.json");
 
 function send(res, status, payload) {

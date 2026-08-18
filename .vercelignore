@@ -1,8 +1,7 @@
-server/
-server/data/
+server
 *.sqlite
 *.CSV
-*.csv
-!public
 .env
 .DS_Store
+.git
+README.md

@@ -1,10 +1,19 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
   "functions": {
     "api/geo.js": {
-      "includeFiles": "data/**",
-      "maxDuration": 15
+      "includeFiles": "data/IP2LOCATION-LITE-DB3.BIN",
+      "maxDuration": 15,
+      "memory": 1024
     },
     "api/visits.js": {
+      "includeFiles": "data/IP2LOCATION-LITE-DB3.BIN",
+      "maxDuration": 15,
+      "memory": 1024
+    },
+    "api/ip.js": {
       "maxDuration": 10
     }
   }

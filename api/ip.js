@@ -1,5 +1,9 @@
 import { visitorPublicIp } from "../lib/geo.js";
 
+export const config = {
+  maxDuration: 10,
+};
+
 function send(res, status, payload) {
   res.statusCode = status;
   res.setHeader("Content-Type", "application/json; charset=utf-8");

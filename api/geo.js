@@ -1,4 +1,10 @@
-import { clientIp, isPublicIp, isValidIPv4, lookup } from "../lib/geo.js";
+import { isPublicIp, isValidIPv4, lookup, visitorPublicIp } from "../lib/geo.js";
+
+export const config = {
+  maxDuration: 15,
+  memory: 1024,
+  includeFiles: ["data/IP2LOCATION-LITE-DB3.BIN"],
+};
 
 function send(res, status, payload) {
   res.statusCode = status;
@@ -17,7 +23,8 @@ export default async function handler(req, res) {
     const host = req.headers.host || "localhost";
     const url = new URL(req.url, `http://${host}`);
     const requested = (url.searchParams.get("ip") || "").trim();
-    const visitorIp = clientIp(req);
+    const detected = await visitorPublicIp(req);
+    const visitorIp = detected.ip;
     const ip = requested || visitorIp;
 
     if (!isValidIPv4(ip)) {

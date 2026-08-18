@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "node local-server.mjs",
     "download-db": "node scripts/download-bin.mjs",
-    "build": "node scripts/download-bin.mjs"
+    "build": "node scripts/download-bin.mjs",
+    "vercel-build": "node scripts/download-bin.mjs"
   },
   "engines": {
-    "node": ">=18"
+    "node": "20.x"
   },
   "dependencies": {
     "ip2location-nodejs": "^9.7.0"

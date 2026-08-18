@@ -18,9 +18,18 @@ if (fs.existsSync(BIN_PATH) && fs.statSync(BIN_PATH).size > 1_000_000) {
 
 const token = process.env.IP2LOCATION_TOKEN || process.argv[2] || "";
 if (!token) {
-  console.error(
-    "Missing token. Set IP2LOCATION_TOKEN or run: npm run download-db -- YOUR_TOKEN"
-  );
+  console.error(`
+Missing IP2LOCATION_TOKEN.
+
+Vercel:
+  Project → Settings → Environment Variables
+  Name: IP2LOCATION_TOKEN
+  Value: your lite.ip2location.com download token
+  Enable it for Production, Preview, and Development.
+
+Local:
+  npm run download-db -- YOUR_TOKEN
+`);
   process.exit(1);
 }
 
